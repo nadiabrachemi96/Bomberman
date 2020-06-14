@@ -1,0 +1,38 @@
+************************************************************************************************************************************************************************
+***********************************Rapport de mon projet pour le jeu bomberman******************************************************************************************
+************************************************************************************************************************************************************************
+J'ai jamais eu l'occasion de jouer a ce jeu donc j'ai regarder sur youtube une vidéo qui mentrait les régles du juex :les plus importantes que j'ai retenue et appliqué dans mon projet.
+Brachemi Nadia G02 informatique.
+
+************************************************************************************************************************************************************************
+************************************************************************************Mes réalisation*********************************************************************
+************************************************************************************************************************************************************************
+-un joueur ne peut pas prendre la méme position qu'un joueur adversaire: *avec la fonction "gestion_collision(bomberman* ennemie,bomberman* mine)"
+-aprés l'explosion de chaque bombes les powerups s'affichent :*avec la fonction "afficher_personage(mine->map,mine)"
+-dans la map il y'a des murs qui sont résistant au bombes malgré le nombre d'explosions c'est le mur '0' et il y'a un mur qui se démoli aprés deux explosion de bombes '1'
+-si un joueur est présent dans le souffle d'une bombe il perds une vie et si il arrive a 0 il quite la partie et le joueur adverse gagne avec la fonction "bomb_explosion(bomberman* a,bomberman* b,char tab[10][45])
+-pour pouvoir jouer à deux j'ai fait un pointeur vers un autre joueur qui s'appelle adversaire dans ma structure de bomberman .
+-le joueuer principale utilisera les touches "ZSQD" et l'adveraire se déplacera avec les fléches.
+-les positions de départ ont été fixés avec la fonction load_bomberman
+-pour quitter le jeux il suffir d'appuyer sur la touche 'A' ,le joueuer principale dépose une bombe avec la touche ' ' et l'adversaire avec la touche 'B'
+-le souffle de la bombe est les quatres cases qui l'entournet .
+
+
+************************************************************************************************************************************************************************
+**********************Ce Qui N'a Pas éré Réalisé (les problémes que j'arrive pas a régler ) ****************************************************************************
+************************************************************************************************************************************************************************
+
+-je n'arrive pas afficher la bombe en rouge toute la map s'affiche en rouge .
+-pour la phase quatre on peut jouer avec deux joueurs :un joueur pointe vers un autre joueur adversaire dnas la structure bomberman :
+struct bomb{
+  char* name;
+  char map[10][45];
+  char mapCar[10][44];
+  int speed;
+  int nombre_vie;;
+  int porte_bombe;
+  int nombre_bombe;
+  bomberman* adversaire;
+  pos_bombman position;
+
+ };
